@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/aykevl/plaincast/apps/youtube/mp"
-	"github.com/aykevl/plaincast/config"
-	"github.com/aykevl/plaincast/log"
+	"github.com/tiuub/plaincast/apps/youtube/mp"
+	"github.com/tiuub/plaincast/config"
+	"github.com/tiuub/plaincast/log"
 	"github.com/nu7hatch/gouuid"
 )
 
