@@ -3,16 +3,20 @@ package server
 import (
 	"flag"
 
+	"github.com/aykevl/plaincast/config"
 	"github.com/aykevl/plaincast/log"
 	"github.com/nu7hatch/gouuid"
 )
 
 const (
 	NAME          = "Plaincast"
-	FRIENDLY_NAME = "Plaincast"
 	VERSION       = "0.0.1"
 	CONFIGID      = 1
 )
+
+var FRIENDLY_NAME, err = config.Get().GetString("apps.youtube.friendly_name", func() (string, error) {
+	return "Plaincast", nil
+})
 
 var deviceUUID *uuid.UUID
 var disableSSDP = flag.Bool("no-ssdp", false, "disable SSDP broadcast")
