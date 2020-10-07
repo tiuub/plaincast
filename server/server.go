@@ -14,16 +14,17 @@ const (
 	CONFIGID      = 1
 )
 
-var FRIENDLY_NAME, err = config.Get().GetString("server.friendly_name", func() (string, error) {
-	return "Plaincast", nil
-})
-
 var deviceUUID *uuid.UUID
+var friendlyName = "Plaincast"
 var disableSSDP = flag.Bool("no-ssdp", false, "disable SSDP broadcast")
 var logger = log.New("server", "log HTTP and SSDP server")
 
 func Serve() {
 	var err error
+	friendlyName, err = config.Get().GetString("server.friendlyName", func() (string, error) {
+		return "Plaincast", nil
+	})
+	
 	deviceUUID, err = getUUID()
 	if err != nil {
 		logger.Fatal(err)
