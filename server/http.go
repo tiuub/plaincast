@@ -100,11 +100,11 @@ func NewUPnPServer() *UPnPServer {
 	if err != nil {
 		panic(err)
 	}
-	us.friendlyName = FRIENDLY_NAME + " " + hostname
+	us.friendlyName = friendlyName + " " + hostname
 
 	// initialize all known apps
 	us.apps = make(map[string]apps.App)
-	us.apps["YouTube"] = youtube.New(FRIENDLY_NAME)
+	us.apps["YouTube"] = youtube.New(friendlyName)
 	if *flagInitialApp != "" {
 		if app, ok := us.apps[*flagInitialApp]; ok {
 			app.Start("")
