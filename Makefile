@@ -1,7 +1,7 @@
 # some helpful shortcuts
 
 build:
-	go install github.com/aykevl/plaincast
+	go install github.com/tiuub/plaincast
 
 fmt:
 	go fmt . ./apps ./apps/youtube ./apps/youtube/mp ./config ./log ./server
