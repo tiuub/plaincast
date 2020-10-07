@@ -14,7 +14,7 @@ const (
 	CONFIGID      = 1
 )
 
-var FRIENDLY_NAME, err = config.Get().GetString("apps.youtube.friendly_name", func() (string, error) {
+var FRIENDLY_NAME, err = config.Get().GetString("server.friendly_name", func() (string, error) {
 	return "Plaincast", nil
 })
 
