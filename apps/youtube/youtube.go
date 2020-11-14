@@ -15,13 +15,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tiuub/plaincast/apps/youtube/mp"
-	"github.com/tiuub/plaincast/config"
-	"github.com/tiuub/plaincast/log"
+	"github.com/aykevl/plaincast/apps/youtube/mp"
+	"github.com/aykevl/plaincast/config"
+	"github.com/aykevl/plaincast/log"
 	"github.com/nu7hatch/gouuid"
 )
 
-var logger = log.New("youtube", "Log YouTube app")
+var logger = log.New("youtube", "log YouTube app")
 
 // How often a new connection attempt should be done.
 // With a starting delay of 500ms that exponentially increases, this is about 5
@@ -106,14 +106,6 @@ func New(systemName string) *YouTube {
 
 func (yt *YouTube) FriendlyName() string {
 	return "YouTube"
-}
-
-func (yt *YouTube) Data(requestData string) string {
-        if requestData == "screenid" {
-		return yt.getScreenId()
-	}
-
-	return ""
 }
 
 // Start starts the YouTube app asynchronously.

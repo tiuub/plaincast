@@ -1,16 +1,16 @@
 # some helpful shortcuts
 
 build:
-	go install github.com/tiuub/plaincast
+	go install github.com/aykevl/plaincast
 
 fmt:
 	go fmt . ./apps ./apps/youtube ./apps/youtube/mp ./config ./log ./server
 
 run: build
-	${GOPATH}/bin/plaincast
+	../../bin/plaincast
 
 install:
-	cp ${GOPATH}/bin/plaincast /usr/local/bin/plaincast.new
+	cp ../../bin/plaincast /usr/local/bin/plaincast.new
 	mv /usr/local/bin/plaincast.new /usr/local/bin/plaincast
 	if ! egrep -q "^plaincast:" /etc/passwd; then useradd -s /bin/false -r -M plaincast -g audio; fi
 	mkdir -p /var/local/plaincast

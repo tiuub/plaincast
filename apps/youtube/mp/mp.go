@@ -7,10 +7,10 @@ import (
 	"flag"
 	"time"
 
-	"github.com/tiuub/plaincast/log"
+	"github.com/aykevl/plaincast/log"
 )
 
-var logger = log.New("player", "Log media player messages")
+var logger = log.New("player", "log media player messages")
 
 var cacheDir = flag.String("cachedir", "", "Cache directory")
 
