@@ -33,7 +33,7 @@ directory. In any case, set the environment variable `$GOROOT` to this path:
 
 Then get the required packages and compile:
 
-    $ go get -u github.com/aykevl/plaincast
+    $ go get -u github.com/tiuub/plaincast
 	
 To run the server, you can run the executable `bin/plaincast` relative to your Go
 workspace.
@@ -42,7 +42,7 @@ workspace.
 
 or install it as service
 
-	$ cd src/github.com/aykevl/plaincast
+	$ cd src/github.com/tiuub/plaincast
 	$ make install
 
 If you want to remove service `$ make remove`
